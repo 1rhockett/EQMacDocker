@@ -65,6 +65,7 @@ services:
     volumes:
       - shared:/app/shared
     depends_on:
+
       - db
       - world
 
@@ -94,6 +95,8 @@ services:
       MYSQL_USER: ${DATABASE_USER:-eq}
       MYSQL_PASSWORD: ${DATABASE_PASSWORD:-eq}
       MYSQL_DATABASE: ${DATABASE_NAME:-eq}
+    ports:
+      - 3306:3306/tcp
     volumes:
       - database:/var/lib/mysql
 
